@@ -1,0 +1,223 @@
+/* === CSS Variables === */
+:root {
+  --primary-bg: #024c4a;
+  --nav-bg: #1e293b;
+  --hero-blend: rgba(0, 0, 0, 0.5);
+  --accent: #3b82f6;
+  --accent-dark: #084fe9;
+  --text-color: #333;
+  --light-bg: #f4f6f8;
+  --card-bg: #f9fafb;
+  --section-bg: #f1f5f9;
+  --box-bg: #e2e8f0;
+  --link-color: #0f766e;
+  --scroll-shadow: rgba(0, 0, 0, 0.395);
+  --radius: 8px;
+  --transition: 0.3s ease;
+}
+
+/* === Base Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* === Header === */
+header {
+  background: linear-gradient(90deg, var(--primary-bg), var(--nav-bg));
+  color: white;
+  text-align: center;
+  padding: 1.8rem 1rem;
+}
+header h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+header p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+/* === Navigation === */
+nav {
+  background-color: var(--nav-bg);
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0.6rem 0;
+}
+nav li {
+  margin: 0.6rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+nav a:hover {
+  background-color: var(--accent);
+}
+
+/* === Hero Section === */
+.hero {
+  background: url('https://images.unsplash.com/photo-1598526210674-7f765d8e1d8d') center/cover;
+  background-blend-mode: multiply;
+  background-color: var(--hero-blend);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.hero h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* === Product Section === */
+#products {
+  padding: 2rem 1rem;
+  background-color: #fff;
+}
+#products h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-bg);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#searchBox {
+  display: block;
+  margin: 1.2rem auto;
+  padding: 0.65rem;
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+}
+
+/* === Product Cards === */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+.product-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, border 0.3s ease;
+  border: 1px solid transparent;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  border: 1px solid var(--accent);
+}
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.product-card h3 {
+  margin: 0.8rem 0 0.5rem;
+  font-weight: 600;
+}
+.product-card p {
+  font-size: 0.95rem;
+  padding: 0 1rem 1rem;
+}
+.buy-btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: background 0.3s ease;
+}
+.buy-btn:hover {
+  background-color: var(--accent-dark);
+}
+
+/* === About & Contact Sections === */
+#about, #contact {
+  padding: 2rem 1rem;
+  background-color: var(--section-bg);
+}
+#about h2, #contact h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+#about ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+}
+#about li {
+  list-style: none;
+  padding: 1rem;
+  background-color: var(--box-bg);
+  border-radius: var(--radius);
+  flex: 1 1 200px;
+  text-align: center;
+}
+#contact p {
+  text-align: center;
+  margin: 0.6rem 0;
+}
+#contact a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* === Footer === */
+footer {
+  background-color: var(--primary-bg);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* === Scroll to Top Button === */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 10px var(--scroll-shadow);
+}
+#scrollTopBtn:hover {
+  background: var(--accent-dark);
+}
